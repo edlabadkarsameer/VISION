@@ -142,6 +142,18 @@ def page8():
 @app.route('/thai-sign-language')
 def page9():
     return render_template('thai-sign-language.html')
+
+@app.route('/text-isl-sign-language')
+def page10():
+    return render_template('text-isl-sign-language.html')
+
+@app.route('/text-usa-sign-language')
+def page11():
+    return render_template('text-usa-sign-language.html')
+
+@app.route('/text-thai-sign-language')
+def page12():
+    return render_template('text-thai-sign-language.html')
 @app.route('/video_feed')
 def video_feed():
     global camera_running

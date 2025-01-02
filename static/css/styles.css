@@ -1,17 +1,24 @@
 /* General Styles */
 body {
     margin: 0;
+    padding:0;
     font-family: 'Roboto', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
+    overflow-x: hidden;
+}
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .sub-dropdown-menu {
     display: none;
     list-style: none;
     position: absolute;
+    width: 370px;
     left: 100%;
     top: 0;
     background-color: #f8f9fa;
@@ -19,12 +26,12 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Set the desired width here */
 }
 
 .sub-dropdown-menu li {
+    margin: 10px;
     padding: 10px;
-    width: 400px;
+    width: 300px;
 }
 
 .sub-dropdown-menu li a {
@@ -50,6 +57,8 @@ body {
     
 /* Main Content Containers - Vertical Layout */
 .main-content2 {
+    margin-left: 230px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -215,11 +224,108 @@ textarea:focus {
 .main-content {
     margin-left: 270px;
     padding: 20px;
+    
 }
-.main-content h2 {
-    font-size: 2rem;
+
+.name{
+    display: flex;
+    justify-content: center; /* Horizontally center the carousel */
+    align-items: center; /* Vertically center the carousel if needed */
+}
+.main-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.main-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.carousel-bhai {
+    display: flex;
+    justify-content: center; /* Horizontally center the carousel */
+    align-items: center; /* Vertically center the carousel if needed */
+}
+.carousel-slide {
+    padding: 0 !important;
+    margin: 0 auto; /* This will center it horizontally */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 70% !important;
+    max-height: 120vh !important;
+    object-fit: cover;
+    overflow-x: hidden !important;
+    overflow: hidden;
+}
+/* Carousel Section */
+ .carousel {
+    padding: 0 !important;
+    margin: 0 auto; 
+    display: flex;
+    gap: 10px;
+    margin-bottom: 60px;
+    max-width: 70% !important;
+    max-height: 1000px !important;
+    object-fit: cover;
+    overflow-x: hidden !important;
+    overflow: hidden;
+}
+/*
+.carousel-image {
+    padding: 0 !important;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 70% !important;
+    max-height: 500px !important;
+    object-fit: cover;
+    overflow-x: hidden !important;
+    overflow: hidden;
+} 
+
+
+#imageCarousel {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    
+}
+/* Grid Layout Section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
 }
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Columns Section */
+.columns {
+    display: flex;
+    gap: 20px;
+}
+.column {
+    flex: 1;
+}
+.column h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.column p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
 .video-container {
     position: relative;
     max-width: 100%;
@@ -341,7 +447,7 @@ textarea:focus {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .sidebar ul li .dropdown-icon {
-    margin-left: 5px;
+    margin-left: 10%;
 }
 /* Hover effect - Darker orange shade */
 .sidebar ul li:hover {

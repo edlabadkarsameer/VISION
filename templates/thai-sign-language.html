@@ -25,7 +25,31 @@
     </div>  
         <ul>
             <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="{{ url_for('page5') }}"><i class="fas fa-home"></i> Sign To Text</a></li>
+            <li>
+                <i class="fas fa-user"></i> Sign To Text
+                <i class="fas fa-caret-down dropdown-icon"></i>
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page7') }}">
+                            <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            Indian Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page8') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            American Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            Thailand Sign Language
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li>
                 <a href="{{ url_for('page6') }}">
                     <i class="fas fa-user"></i> Speech To Sign
@@ -34,19 +58,19 @@
                 <!-- Dropdown for Speech to Sign -->
                 <ul class="sub-dropdown-menu">
                     <li>
-                        <a href="{{ url_for('page6') }}?model=fast">
+                        <a href="{{ url_for('page7') }}">
                             <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
                             Indian Sign Language
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('page6') }}?model=accurate">
+                        <a href="{{ url_for('page8') }}">
                             <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
                             American Sign Language
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('page6') }}?model=accurate">
+                        <a href="{{ url_for('page9') }}">
                             <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
                             Thailand Sign Language
                         </a>
@@ -107,7 +131,7 @@
 
         <!-- Main Content -->
         <div class="main-content2">
-            <h2>Speech-to-Sign </h2>
+            <h2>Speech-to-Thailand Sign Language </h2>
     <!-- Speech Recognition Container -->
     <div class="speech-container">
         <textarea id="speech-text" placeholder="Your speech text will appear here..." rows="5" readonly></textarea>
