@@ -2,8 +2,6 @@ import cv2
 import mediapipe as mp
 from flask import Flask, render_template, Response
 import threading
-import time
-from threading import Lock
 
 vid = None
 camera_running = False

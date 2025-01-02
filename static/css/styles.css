@@ -8,6 +8,135 @@ body {
     overflow: hidden;
 }
 
+/* Main Content Containers - Vertical Layout */
+.main-content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-content2 h2 {
+    font-size: 2rem;
+    margin-top: 5%;
+    margin-right: 55%;
+
+}
+
+/* Speech Recognition Container */
+.speech-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.speech-container textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    background-color: #f9f9f9;
+}
+
+.speech-container .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.speech-container .button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.speech-container .button-container button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.speech-container .button-container button:hover:enabled {
+    background-color: #0056b3;
+}
+
+/* Convert Button */
+.convert-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.convert-container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.convert-container button:hover {
+    background-color: #218838;
+}
+
+/* Sign Language Container */
+.sign-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-container img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.sign-container p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+}
+
+/* General */
+button {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .control-btn {
     padding: 10px 30px;
     font-size: 16px;

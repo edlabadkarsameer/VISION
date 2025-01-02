@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo2.png') }}" type="image/x-icon">
 </head>
 <body>
 <div class="container">
@@ -26,7 +26,7 @@
         <ul>
             <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{{ url_for('page5') }}"><i class="fas fa-home"></i> Sign To Text</a></li>
-            <li><a href="{{ url_for('page6') }}"><i class="fas fa-user"></i> Text To Sign</a></li>
+            <li><a href="{{ url_for('page6') }}"><i class="fas fa-user"></i> Speech To Sign</a></li>
             <li><a href="{{ url_for('page1') }}"><i class="fas fa-user"></i> Run On Video</a></li>
             <li><a href="{{ url_for('page2') }}"><i class="fas fa-sign-out-alt"></i> About Us</a></li>
             <li><a href="{{ url_for('page4') }}"><i class="fas fa-cog"></i> Settings</a></li>
@@ -80,13 +80,173 @@
         </div>
 
         <!-- Main Content -->
-        <div class="main-content">
-            <h1>Text-to-Image</h1>
-            <p>This is your central hub for managing data and viewing insights.</p>
+        <div class="main-content2">
+            <h2>Speech-to-Sign </h2>
+    <!-- Speech Recognition Container -->
+    <div class="speech-container">
+        <textarea id="speech-text" placeholder="Your speech text will appear here..." rows="5" readonly></textarea>
+        <div class="button-container">
+            <button id="start-recording"><i class="fas fa-microphone"></i> Start</button>
+            <button id="stop-recording" disabled><i class="fas fa-stop"></i> Stop</button>
         </div>
+    </div>
+
+    <!-- Convert Button -->
+    <div class="convert-container">
+        <button id="convert-button">Convert to Sign Language</button>
+    </div>
+
+    <!-- Sign Language Display -->
+    <div id="sign-language-container" class="sign-container"></div>
+</div>
     </div>
 </div>
 <script>
+// Speech Recognition Logic
+let recognition;
+let isRecording = false;
+
+if ('webkitSpeechRecognition' in window) {
+    console.log("Speech Recognition is supported in this browser.");
+
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = 'en-US';
+
+    const speechText = document.getElementById('speech-text');
+
+    recognition.onstart = () => {
+        console.log("Speech recognition started.");
+        isRecording = true;
+        document.getElementById('start-recording').disabled = true;
+        document.getElementById('stop-recording').disabled = false;
+    };
+
+    recognition.onresult = (event) => {
+        console.log("Speech recognition result received.");
+        let interimText = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+                console.log("Final result:", event.results[i][0].transcript);
+                speechText.value += event.results[i][0].transcript + ' ';
+            } else {
+                interimText += event.results[i][0].transcript;
+                console.log("Interim result:", interimText);
+            }
+        }
+    };
+
+    recognition.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+        alert(`Error: ${event.error}`);
+    };
+
+    recognition.onend = () => {
+        console.log("Speech recognition ended.");
+        isRecording = false;
+        document.getElementById('start-recording').disabled = false;
+        document.getElementById('stop-recording').disabled = true;
+    };
+} else {
+    console.error("Speech Recognition is not supported in this browser.");
+    alert('Speech Recognition is not supported in this browser.');
+}
+
+document.getElementById('start-recording').addEventListener('click', () => {
+    if (!isRecording) {
+        console.log("Start recording button clicked.");
+        recognition.start();
+    } else {
+        console.log("Speech recognition is already running.");
+    }
+});
+
+document.getElementById('stop-recording').addEventListener('click', () => {
+    if (isRecording) {
+        console.log("Stop recording button clicked.");
+        recognition.stop();
+    } else {
+        console.log("Speech recognition is not currently running.");
+    }
+});
+
+// Convert to Sign Language Logic
+document.getElementById('convert-button').addEventListener('click', () => {
+    const text = document.getElementById('speech-text').value.trim().toLowerCase();
+    const signContainer = document.getElementById('sign-language-container');
+
+    // Clear previous signs
+    signContainer.innerHTML = '';
+
+    if (!text) {
+        console.log("No text available for conversion.");
+        signContainer.innerHTML = '<p>Please provide some text to convert.</p>';
+        return;
+    }
+
+    console.log("Converting text to sign language:", text);
+
+    const delay = 1000; // 2 seconds per image
+    let index = 0;
+
+    const displaySign = () => {
+        // Clear the container for the next character
+        signContainer.innerHTML = '';
+
+        if (index < text.length) {
+            const char = text[index];
+            if (/[a-z]/.test(char)) { // Only process alphabetic characters
+                const img = document.createElement('img');
+                img.src = `/static/images/ISL/${char}.png`; // Updated path
+                img.alt = char;
+                img.style.width = '100px';
+                img.style.height = '100px';
+                signContainer.appendChild(img);
+                console.log(`Displayed sign for: ${char}`);
+            } else {
+                console.log(`Skipping non-alphabetic character: ${char}`);
+            }
+            index++;
+            setTimeout(displaySign, delay);
+        } else {
+            console.log("Conversion complete.");
+            signContainer.innerHTML = '<p>Conversion complete!</p>';
+        }
+    };
+
+    displaySign();
+});
+
+// Dropdown logic for multiple dropdown boxes
+document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+    const dropdownInput = dropdownBox.querySelector('input');
+    const dropdownMenu = dropdownBox.querySelector('.dropdown-menu');
+
+    dropdownInput.addEventListener('click', (event) => {
+        event.stopPropagation();
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown-box').forEach(box => {
+            if (box !== dropdownBox) box.classList.remove('active');
+        });
+        dropdownBox.classList.toggle('active');
+    });
+
+    dropdownMenu.addEventListener('click', (event) => {
+        if (event.target.tagName === 'LI') {
+            dropdownInput.value = event.target.textContent;
+            dropdownBox.classList.remove('active');
+        }
+    });
+});
+
+// Close all dropdowns when clicking outside
+document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+        dropdownBox.classList.remove('active');
+    });
+});
+
     // Dropdown logic
     // Dropdown logic for multiple dropdown boxes
 document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
