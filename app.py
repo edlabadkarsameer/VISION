@@ -139,9 +139,9 @@ def page7():
 def page8():
     return render_template('usa-sign-language.html')
 
-@app.route('/thai-sign-language')
+@app.route('/launch-soon')
 def page9():
-    return render_template('thai-sign-language.html')
+    return render_template('launch-soon.html')
 
 @app.route('/text-isl-sign-language')
 def page10():
