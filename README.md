@@ -41,6 +41,6 @@ VISION aims to break down communication barriers and provide equal access to int
 1. Navigate to the root directory of the project.
 2. Run the following command to start the application:
    ```bash
-   streamlit run file_name.py
+   python3 run app.py
    ```
 3. Open your browser and grant microphone/camera permissions when prompted.
