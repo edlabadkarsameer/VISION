@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     margin: 0;
-    padding:0;
+    padding: 0;
     font-family: 'Roboto', Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,7 @@ body {
     overflow: hidden;
     overflow-x: hidden;
 }
+
 .container {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -47,14 +48,16 @@ body {
     width: 20px;
     height: 15px;
     vertical-align: middle;
-    margin-right: 8px; /* Adds space between the flag and text */
+    margin-right: 8px;
+    /* Adds space between the flag and text */
 }
 
 .sub-dropdown-menu li a {
     display: flex;
-    align-items: center; /* Ensures flag and text are aligned */
+    align-items: center;
+    /* Ensures flag and text are aligned */
 }
-    
+
 /* Main Content Containers - Vertical Layout */
 .main-content2 {
     margin-left: 230px;
@@ -64,6 +67,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .main-content2 h2 {
     font-size: 2rem;
     margin-top: 5%;
@@ -206,7 +210,8 @@ textarea:focus {
 }
 
 .play-btn {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
+    /* Green */
 }
 
 .play-btn:hover {
@@ -214,7 +219,8 @@ textarea:focus {
 }
 
 .stop-btn {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
+    /* Red */
 }
 
 .stop-btn:hover {
@@ -224,33 +230,42 @@ textarea:focus {
 .main-content {
     margin-left: 270px;
     padding: 20px;
-    
+
 }
 
-.name{
+.name {
     display: flex;
-    justify-content: center; /* Horizontally center the carousel */
-    align-items: center; /* Vertically center the carousel if needed */
+    justify-content: center;
+    /* Horizontally center the carousel */
+    align-items: center;
+    /* Vertically center the carousel if needed */
 }
+
 .main-content h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     align-items: center;
     justify-content: center;
 }
+
 .main-content p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 30px;
 }
+
 .carousel-bhai {
     display: flex;
-    justify-content: center; /* Horizontally center the carousel */
-    align-items: center; /* Vertically center the carousel if needed */
+    justify-content: center;
+    /* Horizontally center the carousel */
+    align-items: center;
+    /* Vertically center the carousel if needed */
 }
+
 .carousel-slide {
     padding: 0 !important;
-    margin: 0 auto; /* This will center it horizontally */
+    margin: 0 auto;
+    /* This will center it horizontally */
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
@@ -260,10 +275,11 @@ textarea:focus {
     overflow-x: hidden !important;
     overflow: hidden;
 }
+
 /* Carousel Section */
- .carousel {
+.carousel {
     padding: 0 !important;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     gap: 10px;
     margin-bottom: 60px;
@@ -273,6 +289,7 @@ textarea:focus {
     overflow-x: hidden !important;
     overflow: hidden;
 }
+
 /*
 .carousel-image {
     padding: 0 !important;
@@ -303,6 +320,7 @@ textarea:focus {
     gap: 10px;
     margin-bottom: 20px;
 }
+
 .image-grid img {
     width: 100%;
     height: auto;
@@ -314,13 +332,16 @@ textarea:focus {
     display: flex;
     gap: 20px;
 }
+
 .column {
     flex: 1;
 }
+
 .column h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
+
 .column p {
     font-size: 1.1rem;
     line-height: 1.4;
@@ -329,15 +350,17 @@ textarea:focus {
 .video-container {
     position: relative;
     max-width: 100%;
-    width: 700px;  /* Set video width to a default size */
+    width: 700px;
+    /* Set video width to a default size */
     margin-left: 40%;
 }
+
 .video-container img {
     width: 100%;
     height: auto;
     border-color: #000;
     border-radius: 8px;
-    margin-left:10px;
+    margin-left: 10px;
 }
 
 /* Text box with dropdown */
@@ -379,14 +402,15 @@ textarea:focus {
     z-index: 1000;
     display: none;
     max-height: 200px;
-    padding:5px;
+    padding: 5px;
     overflow-y: auto;
 }
 
 .dropdown-box .dropdown-menu li {
     padding: 10px;
     margin: 5px;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
+    /* Rounded corners */
     background-color: #e67e22;
     color: #000;
     font-size: 1rem;
@@ -411,7 +435,7 @@ textarea:focus {
     color: #000;
     display: flex;
     flex-direction: column;
-    padding:15px 0;
+    padding: 15px 0;
     position: fixed;
     height: 100%;
     transition: transform 0.3s ease-in-out;
@@ -421,7 +445,8 @@ textarea:focus {
 .sidebar .logo {
     text-align: center;
     font-size: 1.5rem;
-    font-weight: 700; /* Use Roboto Bold */
+    font-weight: 700;
+    /* Use Roboto Bold */
     margin-bottom: 20px;
 }
 
@@ -438,21 +463,31 @@ textarea:focus {
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-weight: 500; /* Medium weight for better readability */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #e67e22; /* Light shade of orange as default */
-    margin-bottom: 10px; /* Add some padding between the buttons */
-    margin-left: 15px;  /* Margin from the left side */
-    margin-right: 15px; /* Margin from the right side */
+    font-weight: 500;
+    /* Medium weight for better readability */
+    border-radius: 10px;
+    /* Rounded corners */
+    background-color: #e67e22;
+    /* Light shade of orange as default */
+    margin-bottom: 10px;
+    /* Add some padding between the buttons */
+    margin-left: 15px;
+    /* Margin from the left side */
+    margin-right: 15px;
+    /* Margin from the right side */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .sidebar ul li .dropdown-icon {
     margin-left: 10%;
 }
+
 /* Hover effect - Darker orange shade */
 .sidebar ul li:hover {
-    background-color: #e67e22; /* Darker orange on hover */
-    color: #ffffff; /* Text color on hover */
+    background-color: #e67e22;
+    /* Darker orange on hover */
+    color: #ffffff;
+    /* Text color on hover */
 }
 
 /* Sidebar icons */
@@ -463,16 +498,22 @@ textarea:focus {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: inherit; /* Inherits text color from the parent */
-    display: flex; /* Aligns icon and text in a row */
-    align-items: center; /* Vertical centering */
-    padding: 10px; /* Add padding for better click area */
+    color: inherit;
+    /* Inherits text color from the parent */
+    display: flex;
+    /* Aligns icon and text in a row */
+    align-items: center;
+    /* Vertical centering */
+    padding: 10px;
+    /* Add padding for better click area */
     height: 1px;
 }
 
 .sidebar ul li a:hover {
-    color: #fff; /* Change text color on hover */
+    color: #fff;
+    /* Change text color on hover */
 }
+
 /* Header */
 .header {
     background-color: #34495e;
@@ -582,14 +623,17 @@ textarea:focus {
 
 /* Main content area */
 .main-content {
+
     margin-top: 60px;
     margin-left: 250px;
-    background-color: #EEEEEE; /* Set initial grey background */
+    background-color: white;
+    /* Set initial grey background */
     padding: 20px;
     height: calc(100vh - 60px);
     overflow-y: auto;
     box-sizing: border-box;
-    font-weight: 400; /* Regular weight for content text */
+    font-weight: 400;
+    /* Regular weight for content text */
 }
 
 /* Responsive Design */
@@ -629,4 +673,22 @@ textarea:focus {
     .sidebar-toggle {
         display: block;
     }
+}
+
+
+/* ################################### roshan code ############################################## */
+#image-containerme {
+    margin-top:     10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+/* Image styling to resize with aspect ratio */
+#output-imgme {
+    max-width: 80%;
+    /* Maximum width for the image */
+    height: auto;
+    /* Height adjusts automatically to maintain aspect ratio */
 }

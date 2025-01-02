@@ -6,7 +6,7 @@ import threading
 vid = None
 camera_running = False
 lock = threading.Lock()
-
+my_list=[]
 # Initialize Flask
 app = Flask(__name__)
 
@@ -52,10 +52,227 @@ def generate_frames():
                                 lm_list[3].x < lm_list[4].x and
                                 lm_list[8].y > lm_list[6].y and
                                 lm_list[12].y < lm_list[10].y and
-                                lm_list[16].y > lm_list[14].y and
-                                lm_list[20].y > lm_list[18].y
+                                lm_list[16].y > lm_list[14].y
                             ):
-                                cv2.putText(frame, "F*** OFF !!!", (200, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                                cv2.putText(frame, "FUCK OFF !!!", (200, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                            if (lm_list[3].x < lm_list[4].x and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "fuck off !!!", (200, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255),
+                                            3)
+
+                                # one
+                            if (lm_list[3].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y and
+                                    lm_list[4].y < lm_list[12].y
+                            ):
+                                cv2.putText(frame, "ONE", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                            # two
+                            if (
+                                    lm_list[3].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "TWO", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # three
+                            if (
+                                    lm_list[2].x < lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "THREE", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # four
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[2].x < lm_list[8].x
+                            ):
+                                cv2.putText(frame, "FOUR", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # five
+                            if (
+                                    lm_list[2].x < lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x
+                            ):
+                                cv2.putText(frame, "FIVE", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # six
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x
+                            ):
+                                cv2.putText(frame, "SIX", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # seven
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x
+                            ):
+                                cv2.putText(frame, "SEVEN", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # eight
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x
+                            ):
+                                cv2.putText(frame, "EIGHT", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # nine
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x
+                            ):
+                                cv2.putText(frame, "NINE", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                            # A
+                            if (
+                                    lm_list[2].y > lm_list[4].y and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x and
+                                    lm_list[4].y < lm_list[6].y
+                            ):
+                                cv2.putText(frame, "A", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # B
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y < lm_list[10].y and
+                                    lm_list[16].y < lm_list[14].y and
+                                    lm_list[20].y < lm_list[18].y and
+                                    lm_list[2].x > lm_list[8].x
+                            ):
+                                cv2.putText(frame, "B", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # C
+                            if (
+                                    lm_list[2].x < lm_list[4].x and
+                                    lm_list[8].x > lm_list[6].x and
+                                    lm_list[12].x > lm_list[10].x and
+                                    lm_list[16].x > lm_list[14].x and
+                                    lm_list[20].x > lm_list[18].x
+                            ):
+                                cv2.putText(frame, "C", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # D
+                            if (
+                                    lm_list[3].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y and
+                                    lm_list[4].y > lm_list[8].y
+                            ):
+                                cv2.putText(frame, "D", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # E
+                            if (
+                                    lm_list[2].x > lm_list[4].x and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y and
+                                    lm_list[17].x < lm_list[0].x < lm_list[5].x and
+                                    lm_list[4].y > lm_list[6].y
+                            ):
+                                cv2.putText(frame, "E", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # N
+                            if (
+                                    lm_list[4].x > lm_list[10].x and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "N", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # G
+                            if (
+                                    lm_list[3].x > lm_list[4].x and
+                                    lm_list[8].y < lm_list[7].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "G", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # L
+                            if (
+                                    lm_list[3].x > lm_list[4].x and
+                                    lm_list[7].y > lm_list[8].y and
+                                    lm_list[5].y >= lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "L", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # M
+                            if (
+                                    lm_list[4].x > lm_list[14].x and
+                                    lm_list[8].y > lm_list[6].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "M", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # X
+                            if (
+                                    lm_list[4].x > lm_list[3].x and
+                                    lm_list[8].y < lm_list[7].y and
+                                    lm_list[12].y > lm_list[10].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "X", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+
+                            # U
+                            if (
+                                    lm_list[4].x > lm_list[3].x and
+                                    lm_list[8].y < lm_list[6].y and
+                                    lm_list[7].y >= lm_list[11].y and
+                                    lm_list[16].y > lm_list[14].y and
+                                    lm_list[20].y > lm_list[18].y
+                            ):
+                                cv2.putText(frame, "U", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
 
                             # Draw hand landmarks
                             mp_draw.draw_landmarks(

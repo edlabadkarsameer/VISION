@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Launch Soon</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> -->
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/logo2.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
+
 <body>
     <div class="container2">
         <!-- Sidebar -->
@@ -23,7 +29,7 @@
                         <li>VISION V1.4</li>
                     </ul>
                 </div>
-            </div>  
+            </div>
             <ul>
                 <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
                 <li>
@@ -33,51 +39,58 @@
                     <ul class="sub-dropdown-menu">
                         <li>
                             <a href="{{ url_for('page9') }}">
-                                <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Indian Sign Language
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page1') }}">
-                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 American Sign Language
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page9') }}">
-                                <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Thailand Sign Language
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                        <i class="fas fa-user"></i> Speech To Sign
-                        <i class="fas fa-caret-down dropdown-icon"></i>
+                    <i class="fas fa-user"></i> Speech To Sign
+                    <i class="fas fa-caret-down dropdown-icon"></i>
                     </a>
                     <!-- Dropdown for Speech to Sign -->
                     <ul class="sub-dropdown-menu">
                         <li>
                             <a href="{{ url_for('page7') }}">
-                                <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Indian Sign Language
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page8') }}">
-                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 American Sign Language
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page9') }}">
-                                <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Thailand Sign Language (BETA)
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page9') }}">
-                                <img src="{{ url_for('static', filename='images/flags/japan.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/japan.png') }}" alt="Thai Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Japnease Sign Language (BETA)
                             </a>
                         </li>
@@ -90,13 +103,15 @@
                     <ul class="sub-dropdown-menu">
                         <li>
                             <a href="{{ url_for('page9') }}">
-                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="Indian Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Upload Video (ASL)
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('page1') }}">
-                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                                <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                    style="width: 20px; height: 15px; margin-right: 8px;">
                                 Runtime Camera Capture (ASL)
                             </a>
                         </li>
@@ -136,89 +151,97 @@
             </div>
         </div>
 
-    <!-- Main area -->
-    <div class="main-area">
-        <!-- Header -->
-        <div class="header">
-            <div class="dropdown-box">
-                <input type="text" id="dropdown-input" placeholder="Confidence Level" readonly />
-                <i class="fas fa-caret-down dropdown-icon"></i>
-                <ul class="dropdown-menu">
-                    <li>0.1</li>
-                    <li>0.2</li>
-                    <li>0.3</li>
-                    <li>0.4</li>
-                    <li>0.5</li>
-                </ul>
-            </div>
-            <div class="header-title"></div>
-            <div class="header-tools">
-                <!-- Search box -->
-                <div class="search-box">
-                    <input type="text" placeholder="Search..." />
-                    <button><i class="fas fa-search"></i></button>
+        <!-- Main area -->
+        <div class="main-area">
+            <!-- Header -->
+            <div class="header">
+                <div class="dropdown-box">
+                    <input type="text" id="dropdown-input" placeholder="Confidence Level" readonly />
+                    <i class="fas fa-caret-down dropdown-icon"></i>
+                    <ul class="dropdown-menu">
+                        <li>0.1</li>
+                        <li>0.2</li>
+                        <li>0.3</li>
+                        <li>0.4</li>
+                        <li>0.5</li>
+                    </ul>
                 </div>
-                <!-- Icons -->
-                <div class="header-icons">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-bell" id="notification-icon"></i>
-                        <div class="dropdown" id="notification-dropdown">
-                            <p>No new notifications.</p>
-                        </div>
+                <div class="header-title"></div>
+                <div class="header-tools">
+                    <!-- Search box -->
+                    <div class="search-box">
+                        <input type="text" placeholder="Search..." />
+                        <button><i class="fas fa-search"></i></button>
                     </div>
-                    <div class="icon-wrapper">
-                        <i class="fas fa-envelope" id="message-icon"></i>
-                        <div class="dropdown" id="message-dropdown">
-                            <p>No new messages.</p>
+                    <!-- Icons -->
+                    <div class="header-icons">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-bell" id="notification-icon"></i>
+                            <div class="dropdown" id="notification-dropdown">
+                                <p>No new notifications.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="icon-wrapper">
-                        <i class="fas fa-cog" id="settings-icon"></i>
-                        <div class="dropdown" id="settings-dropdown">
-                            <p>Settings options will go here.</p>
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope" id="message-icon"></i>
+                            <div class="dropdown" id="message-dropdown">
+                                <p>No new messages.</p>
+                            </div>
+                        </div>
+                        <div class="icon-wrapper">
+                            <i class="fas fa-cog" id="settings-icon"></i>
+                            <div class="dropdown" id="settings-dropdown">
+                                <p>Settings options will go here.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <h1 class="name">OOPS.... It will be Launch Soon!!!</h1>
-            
-</div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <h1 class="name">OOPS.... It will be Launch Soon!!!</h1>
+                <div id="image-containerme" data-aos="zoom-in">
+                    <img id="output-imgme" src="../static/images/main/duck.png" width="350px" />
+                </div>
+            </div>
 
-<script>
-    // Dropdown logic
-    // Dropdown logic for multiple dropdown boxes
-document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
-    const dropdownInput = dropdownBox.querySelector('input');
-    const dropdownMenu = dropdownBox.querySelector('.dropdown-menu');
+            <script>
 
-    dropdownInput.addEventListener('click', (event) => {
-        event.stopPropagation();
-        // Close other dropdowns
-        document.querySelectorAll('.dropdown-box').forEach(box => {
-            if (box !== dropdownBox) box.classList.remove('active');
-        });
-        dropdownBox.classList.toggle('active');
-    });
+                // AOS.init({
+                //     duration: 1200, // Animation duration (optional)
+                //     easing: 'ease-in-out', // Easing function (optional)
+                // });
+                // Dropdown logic
+                // Dropdown logic for multiple dropdown boxes
+                document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+                    const dropdownInput = dropdownBox.querySelector('input');
+                    const dropdownMenu = dropdownBox.querySelector('.dropdown-menu');
 
-    dropdownMenu.addEventListener('click', (event) => {
-        if (event.target.tagName === 'LI') {
-            dropdownInput.value = event.target.textContent;
-            dropdownBox.classList.remove('active');
-        }
-    });
-});
+                    dropdownInput.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        // Close other dropdowns
+                        document.querySelectorAll('.dropdown-box').forEach(box => {
+                            if (box !== dropdownBox) box.classList.remove('active');
+                        });
+                        dropdownBox.classList.toggle('active');
+                    });
 
-// Close all dropdowns when clicking outside
-document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
-        dropdownBox.classList.remove('active');
-    });
-});
+                    dropdownMenu.addEventListener('click', (event) => {
+                        if (event.target.tagName === 'LI') {
+                            dropdownInput.value = event.target.textContent;
+                            dropdownBox.classList.remove('active');
+                        }
+                    });
+                });
 
-</script>
+                // Close all dropdowns when clicking outside
+                document.addEventListener('click', () => {
+                    document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+                        dropdownBox.classList.remove('active');
+                    });
+                });
+
+            </script>
 </body>
+
 </html>
