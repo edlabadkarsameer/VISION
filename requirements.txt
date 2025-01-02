@@ -1,6 +1,6 @@
 numpy==1.21.6
 opencv-python-headless
-streamlit==1.0
+flask
 mediapipe
 Pillow
 
