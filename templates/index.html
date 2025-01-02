@@ -15,27 +15,48 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar2">
-        <div class="dropdown-box">
-            <input type="text" id="dropdown-input" placeholder="Select Model" readonly />
-            <i class="fas fa-caret-down dropdown-icon"></i>
-            <ul class="dropdown-menu">
-                <li>VISION V1.0</li>
-                <li>VISION V1.4</li>
-            </ul>
-        </div>
-    </div>  
+            <div class="dropdown-box">
+                <input type="text" id="dropdown-input" placeholder="Select Model" readonly />
+                <i class="fas fa-caret-down dropdown-icon"></i>
+                <ul class="dropdown-menu">
+                    <li>VISION V1.0</li>
+                    <li>VISION V1.4</li>
+                </ul>
+            </div>
+        </div>  
         <ul>
             <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{{ url_for('page5') }}"><i class="fas fa-home"></i> Sign To Text</a></li>
-            <li><a href="{{ url_for('page6') }}"><i class="fas fa-user"></i> Text To Sign</a></li>
+            <li>
+                    <i class="fas fa-user"></i> Speech To Sign
+                    <i class="fas fa-caret-down dropdown-icon"></i>
+                </a>
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page7') }}">
+                            <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            Indian Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page8') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            American Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag" style="width: 20px; height: 15px; margin-right: 8px;">
+                            Thailand Sign Language
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li><a href="{{ url_for('page1') }}"><i class="fas fa-user"></i> Run On Video</a></li>
             <li><a href="{{ url_for('page2') }}"><i class="fas fa-sign-out-alt"></i> About Us</a></li>
             <li><a href="{{ url_for('page4') }}"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
-
-        <div class="sidebar-logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="VISION Logo" width="250px">
-        </div>
     </div>
 
     <!-- Main area -->
