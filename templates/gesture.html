@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #007bff;
+        }
+        .navbar a {
+            color: white !important;
+        }
+        .navbar a:hover {
+            color: #ffcc00 !important;
+        }
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            color: #fff;
+            padding-top: 20px;
+            position: fixed;
+            width: 250px;
+        }
+        .sidebar a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 12px;
+            display: block;
+            font-size: 1.1rem;
+        }
+        .sidebar a:hover {
+            background-color: #007bff;
+        }
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            position: relative;
+            max-width: 100%;
+            width: 720px;  /* Set video width to a default size */
+            margin: 0 auto;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gesture-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.2rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .sidebar h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gesture Recognition</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sidebar and Main Content -->
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="#">Live Feed</a>
+        <a href="#">Gesture Library</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2 class="text-center">Live Hand Gesture Recognition</h2>
+
+        <!-- Video Feed -->
+        <div class="video-container">
+            <h4 class="gesture-text" id="gestureText">Waiting for gesture...</h4>
+            <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

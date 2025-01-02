@@ -1,0 +1,354 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.control-btn {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.control-btn:hover {
+    background-color: #0056b3;
+}
+
+.control-btn:active {
+    background-color: #003f7f;
+}
+
+.play-btn {
+    background-color: #28a745; /* Green */
+}
+
+.play-btn:hover {
+    background-color: #218838;
+}
+
+.stop-btn {
+    background-color: #dc3545; /* Red */
+}
+
+.stop-btn:hover {
+    background-color: #c82333;
+}
+
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+.main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.video-container {
+    position: relative;
+    max-width: 100%;
+    width: 700px;  /* Set video width to a default size */
+    margin-left: 40%;
+}
+.video-container img {
+    width: 100%;
+    height: auto;
+    border-color: #000;
+    border-radius: 8px;
+    margin-left:10px;
+}
+
+/* Text box with dropdown */
+.dropdown-box {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.sidebar2 {
+    position: relative;
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.dropdown-box input {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown-box .dropdown-menu {
+    position: absolute;
+    top: 45px;
+    font-weight: 500;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+    display: none;
+    max-height: 200px;
+    padding:5px;
+    overflow-y: auto;
+}
+
+.dropdown-box .dropdown-menu li {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #e67e22;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-box .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-box.active .dropdown-menu {
+    display: block;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #34495e;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    padding:15px 0;
+    position: fixed;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700; /* Use Roboto Bold */
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    margin-top: 13%;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Default container color for sidebar items */
+.sidebar ul li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500; /* Medium weight for better readability */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #e67e22; /* Light shade of orange as default */
+    margin-bottom: 10px; /* Add some padding between the buttons */
+    margin-left: 15px;  /* Margin from the left side */
+    margin-right: 15px; /* Margin from the right side */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect - Darker orange shade */
+.sidebar ul li:hover {
+    background-color: #e67e22; /* Darker orange on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+/* Sidebar icons */
+.sidebar ul li i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: inherit; /* Inherits text color from the parent */
+    display: flex; /* Aligns icon and text in a row */
+    align-items: center; /* Vertical centering */
+    padding: 10px; /* Add padding for better click area */
+    height: 1px;
+}
+
+.sidebar ul li a:hover {
+    color: #fff; /* Change text color on hover */
+}
+/* Header */
+.header {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 250px);
+    position: fixed;
+    top: 0;
+    left: 250px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Header tools */
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    border-radius: 20px;
+    padding: 5px 10px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px;
+    font-size: 1rem;
+    color: #34495e;
+    width: 100%;
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    color: #34495e;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.search-box button:hover {
+    color: #f39c12;
+}
+
+/* Header icons */
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-wrapper i {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.icon-wrapper i:hover {
+    color: #f39c12;
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: #ffffff;
+    color: #34495e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    width: 200px;
+    z-index: 1000;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+
+/* Main content area */
+.main-content {
+    margin-top: 60px;
+    margin-left: 250px;
+    background-color: #EEEEEE; /* Set initial grey background */
+    padding: 20px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-weight: 400; /* Regular weight for content text */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-250px);
+        position: absolute;
+        z-index: 10;
+    }
+
+    .header {
+        margin-left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    display: none;
+    position: absolute;
+    left: 15px;
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+}

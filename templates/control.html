@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Camera</title>
+    <script>
+        async function controlCamera(action) {
+            const url = action === 'start' ? '/start_camera' : '/stop_camera';
+            await fetch(url, { method: 'POST' });
+            if (action === 'start') {
+                document.getElementById('video-feed').src = '/video_feed';
+            } else {
+                document.getElementById('video-feed').src = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Camera Control</h1>
+    <button onclick="controlCamera('start')">Start Camera</button>
+    <button onclick="controlCamera('stop')">Stop Camera</button>
+    <div>
+        <img id="video-feed" src="/video_feed" width="640" height="480" onerror="this.src=''">
+    </div>
+</body>
+</html>
