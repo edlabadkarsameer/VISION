@@ -692,3 +692,34 @@ textarea:focus {
     height: auto;
     /* Height adjusts automatically to maintain aspect ratio */
 }
+
+
+
+
+/* Centered and larger loader */
+.loader {
+    display: none;
+    border: 8px solid #f3f3f3;  /* Adjust the border size for a larger effect */
+    border-top: 8px solid #e67e22;  /* Change color of the spinning part */
+    border-radius: 50%;
+    width: 100px;  /* Increase the size of the loader */
+    height: 100px;  /* Increase the size of the loader */
+    animation: spin 0.5s linear infinite;
+    position: fixed; /* Fixed positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the size to center it */
+    z-index: 9999; /* Ensure it's on top of all other content */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+        /* Disable button during loading */
+        .disabled-btn {
+            pointer-events: none;
+            opacity: 0.6;
+        }

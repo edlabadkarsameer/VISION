@@ -14,14 +14,9 @@ app = Flask(__name__)
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands()
 mp_draw = mp.solutions.drawing_utils
+mp_drawing_styles = mp.solutions.drawing_styles
 finger_tips = [8, 12, 16, 20]
 thumb_tip = 4
-
-
-# Check if the camera is opened correctly
-# if not vid.isOpened():
-#     print("Error: Could not access the camera.")
-#     exit()
 
 def generate_frames():
     global vid, lock, camera_running
@@ -277,8 +272,8 @@ def generate_frames():
                             # Draw hand landmarks
                             mp_draw.draw_landmarks(
                                 frame, hand_landmark, mp_hands.HAND_CONNECTIONS,
-                                mp_draw.DrawingSpec((0, 0, 255), 6, 3),
-                                mp_draw.DrawingSpec((0, 255, 0), 4, 2)
+                                mp_drawing_styles.get_default_hand_landmarks_style(),
+                                mp_drawing_styles.get_default_hand_connections_style()
                             )
 
                     # Encode the frame as JPEG
@@ -313,6 +308,7 @@ def stop_camera():
             # Release the camera
             vid.release()
             vid = None
+            print("Camera stopped")
             camera_running = False
     return "Camera stopped", 200
 
@@ -371,6 +367,10 @@ def page11():
 @app.route('/text-thai-sign-language')
 def page12():
     return render_template('text-thai-sign-language.html')
+
+@app.route('/run-on-video-ISL')
+def page13():
+    return render_template('run-on-video-isl.html')
 @app.route('/video_feed')
 def video_feed():
     global camera_running

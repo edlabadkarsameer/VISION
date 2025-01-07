@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Sign Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+    <div class="sidebar">
+        <div class="sidebar2">
+            <div class="dropdown-box">
+                <input type="text" id="dropdown-input" placeholder="Select Model" readonly />
+                <i class="fas fa-caret-down dropdown-icon"></i>
+                <ul class="dropdown-menu">
+                    <li>VISION V1.0</li>
+                    <li>VISION V1.4</li>
+                </ul>
+            </div>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li>
+                <i class="fa-solid fa-language"></i></i> Sign To Text
+                  
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page13') }}">
+                            <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Indian Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page1') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            American Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Thailand Sign Language
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa-solid fa-hands"></i> Speech To Sign
+                  
+                </a>
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page7') }}">
+                            <img src="{{ url_for('static', filename='images/flags/india.png') }}" alt="Indian Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Indian Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page8') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            American Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/thailand.png') }}" alt="Thai Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Thailand Sign Language (BETA)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/japan.png') }}" alt="Thai Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Japnease Sign Language (BETA)
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa-solid fa-video"></i> Run On Video
+                  
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="Indian Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Upload Video (ASL)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page1') }}">
+                            <img src="{{ url_for('static', filename='images/flags/USA.png') }}" alt="American Flag"
+                                style="width: 20px; height: 15px; margin-right: 8px;">
+                            Runtime Camera Capture (ASL)
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa-regular fa-address-card"></i> About
+                  
+                <!-- Dropdown for Speech to Sign -->
+                <ul class="sub-dropdown-menu">
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            About Indian Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            About American Sign Language
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            About Devlopers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('page9') }}">
+                            About Application
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('page9') }}"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="https://github.com/edlabadkarsameer/VISION.git"><i class="fa-brands fa-github-alt"></i></i> GitHub</a></li>
+        </ul>
+        <div class="sidebar-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="VISION Logo" width="250px">
+        </div>
+    </div>
+
+    <!-- Main area -->
+    <div class="main-area">
+        <!-- Header -->
+        <div class="header">
+            <div class="dropdown-box">
+                <input type="text" id="dropdown-input" placeholder="Confidence Level" readonly />
+                <i class="fas fa-caret-down dropdown-icon"></i>
+                <ul class="dropdown-menu">
+                    <li>0.1</li>
+                    <li>0.2</li>
+                    <li>0.3</li>
+                    <li>0.4</li>
+                    <li>0.5</li>
+                </ul>
+            </div>
+            <div class="header-title"></div>
+            <div class="header-tools">
+                <!-- Search box -->
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." />
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <!-- Icons -->
+                <div class="header-icons">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-bell" id="notification-icon"></i>
+                        <div class="dropdown" id="notification-dropdown">
+                            <p>No new notifications.</p>
+                        </div>
+                    </div>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-envelope" id="message-icon"></i>
+                        <div class="dropdown" id="message-dropdown">
+                            <p>No new messages.</p>
+                        </div>
+                    </div>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-cog" id="settings-icon"></i>
+                        <div class="dropdown" id="settings-dropdown">
+                            <p>Settings options will go here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+    <h1>American Sign Language</h1>
+    <div class="video-controls-container">
+        <!-- Video Feed -->
+        <div class="video-container">
+            <img id="camera-feed" src="/video_feed" width="640" height="480" onerror="this.src=''">
+        </div>
+        <!-- Buttons -->
+        <div class="controls-container">
+            <button onclick="startCamera()" id="play-btn" class="control-btn play-btn">Start Camera</button>
+            <button onclick="stopCamera()" id="stop-btn" class="control-btn stop-btn ">Stop Camera</button>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    // Dropdown logic for multiple dropdown boxes
+    document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+        const dropdownInput = dropdownBox.querySelector('input');
+        const dropdownMenu = dropdownBox.querySelector('.dropdown-menu');
+
+        dropdownInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown-box').forEach(box => {
+                if (box !== dropdownBox) box.classList.remove('active');
+            });
+            dropdownBox.classList.toggle('active');
+        });
+
+        dropdownMenu.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                dropdownInput.value = event.target.textContent;
+                dropdownBox.classList.remove('active');
+            }
+        });
+    });
+
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.dropdown-box').forEach(dropdownBox => {
+            dropdownBox.classList.remove('active');
+        });
+    });
+
+    // Timer function for 5 seconds delay
+    function startTimer(callback) {
+        setTimeout(callback, 5000); // 5-second delay before executing the callback
+    }
+
+    // Show the loader and simulate waiting time before starting the camera
+    function startCamera() {
+        // Show loader
+        document.getElementById('loader').style.display = 'block';
+
+        // Disable buttons during the process
+        document.getElementById('play-btn').disabled = true;
+        document.getElementById('stop-btn').disabled = true;
+
+        // Simulate a delay to show loader
+        setTimeout(() => {
+            fetch('/start_camera', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('camera-feed').src = '/video_feed';
+                    // Hide loader after 5 seconds
+                    document.getElementById('loader').style.display = 'none';
+                    // Enable buttons after the process
+                    document.getElementById('play-btn').disabled = false;
+                    document.getElementById('stop-btn').disabled = false;
+                })
+                .catch(error => alert('Error: ' + error));
+        }, 2000); // Wait for 5 seconds before starting the camera
+    }
+
+    // Stop the camera and handle UI changes
+    function stopCamera() {
+        // Show loader
+        document.getElementById('loader').style.display = 'block';
+
+        // Disable buttons during the process
+        document.getElementById('play-btn').disabled = true;
+        document.getElementById('stop-btn').disabled = true;
+
+        fetch('/stop_camera', { method: 'POST' })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('camera-feed').src = ''; // Stop the camera feed
+                // Hide loader after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                    // Enable buttons after the process
+                    document.getElementById('play-btn').disabled = false;
+                    document.getElementById('stop-btn').disabled = false;
+                }, 4000); // Wait for 5 seconds to simulate the stop process
+            })
+            .catch(error => alert('Error: ' + error));
+    }
+
+    // Stop the camera when the page is changed
+    window.addEventListener('beforeunload', () => {
+        stopCamera(); // Ensure the camera stops when the page changes or reloads
+    });
+
+    // Bind stop button click to the stopCamera function
+    document.getElementById('stop-btn').addEventListener('click', stopCamera);
+</script>
+
+</body>
+</html>
